@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter, HashRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import CreateEmployee from './components/CreateEmployee/CreateEmployee';
 import EmployeeList from './components/EmployeeList/EmployeeList';
 
@@ -12,6 +12,7 @@ function App() {
           <Route path="/employee-list" element={<EmployeeList/>}/>
         </Routes>
       </BrowserRouter>
+     
     </div>
   );
 }
