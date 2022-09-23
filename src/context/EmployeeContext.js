@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext,  useState } from "react";
 
 export const EmployeeContext = createContext()
 
@@ -24,10 +24,22 @@ export const EmployeeContextProvider = props => {
         localStorage.setItem('employees', JSON.stringify(updatedEmployees))
     }
 
+    const getStoredEmployees = () => {
+        if(localStorage.getItem('employees') !== null){
+            const storedEmployees = JSON.parse(localStorage.getItem('employees'))
+            setEmployees( () => {
+                return [
+                    ...storedEmployees
+                ]
+            })
+        }
+    }
+
    
     return <EmployeeContext.Provider value={{
         employees,
-        addEmployee
+        addEmployee,
+        getStoredEmployees
 
         
     }}>
