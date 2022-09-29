@@ -1,7 +1,7 @@
-
-.create-employee{
-     position: relative;
+.create-employee {
+    position: relative;
 }
+
 .title {
     display: flex;
     align-items: center;
@@ -10,7 +10,7 @@
 
 
 .container {
-   
+
     display: flex;
     flex-direction: column;
     align-items: center;
