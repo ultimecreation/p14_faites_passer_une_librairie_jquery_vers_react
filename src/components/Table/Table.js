@@ -1,28 +1,31 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, {  useEffect, useState } from 'react'
 import './Table.css'
 
-import { EmployeeContext } from '../../context/EmployeeContext'
 import TableBody from '../TableBody/TableBody'
 import TableHead from '../TableHead/TableHead'
 
-const Table = () => {
-    const employeeContext = useContext(EmployeeContext)
-    const [sortedEmployees, setSortedEmployees] = useState([...employeeContext.employees])
+const Table = ({employees}) => {
+
+    const [sortedEmployees, setSortedEmployees] = useState([...employees])
     const columns = [
-        { label: 'first name', accessor: 'firstname' },
-        { label: 'last name', accessor: 'lastname' },
-        { label: 'start date', accessor: 'startDate' },
-        { label: 'department', accessor: 'department' },
-        { label: 'date of birth', accessor: 'dateOfBirth' },
-        { label: 'street', accessor: 'street' },
-        { label: 'city', accessor: 'city' },
-        { label: 'state', accessor: 'state' },
-        { label: 'zip code', accessor: 'zipCode' }
+        { label: 'First Name', accessor: 'firstname' },
+        { label: 'Last Name', accessor: 'lastname' },
+        { label: 'Start Date', accessor: 'startDate' },
+        { label: 'Department', accessor: 'department' },
+        { label: 'Date of Birth', accessor: 'dateOfBirth' },
+        { label: 'Street', accessor: 'street' },
+        { label: 'City', accessor: 'city' },
+        { label: 'State', accessor: 'state' },
+        { label: 'Zip Code', accessor: 'zipCode' }
     ]
 
+    useEffect(()=> {
+        setSortedEmployees([...employees])
+    },[employees])
+    
     const handleSorting = (sortField, sortOrder) => {
         if (sortField) {
-            const sorted = [...employeeContext.employees].sort((a, b) => {
+            const sorted = [...employees].sort((a, b) => {
                 return (
                     a[sortField].toString().localeCompare(b[sortField].toString(), "en", {
                         numeric: true,
