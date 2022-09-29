@@ -6,22 +6,23 @@ import { useContext, useEffect } from 'react';
 import { EmployeeContext } from './context/EmployeeContext';
 
 function App() {
-  const employeesContext = useContext(EmployeeContext)
+    const employeesContext = useContext(EmployeeContext)
 
-  useEffect(() => {
-    employeesContext.getStoredEmployees()
-  },[])
-  return (
-    <div className="App">
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<CreateEmployee/>} />
-          <Route path="/employee-list" element={<EmployeeList/>}/>
-        </Routes>
-      </BrowserRouter>
-     
-    </div>
-  );
+    useEffect(() => {
+        employeesContext.getStoredEmployees()
+    }, [])
+
+    return (
+        <div className="App">
+            <BrowserRouter>
+                <Routes>
+                    <Route path="/" element={<CreateEmployee />} />
+                    <Route path="/employee-list" element={<EmployeeList />} />
+                </Routes>
+            </BrowserRouter>
+
+        </div>
+    );
 }
 
 export default App;

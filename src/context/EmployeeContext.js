@@ -1,16 +1,16 @@
-import { createContext,  useState } from "react";
+import { createContext, useState } from "react";
 
 export const EmployeeContext = createContext()
 
 export const EmployeeContextProvider = props => {
     const [employees, setEmployees] = useState([])
 
-    const addEmployee =  employee => {
-        
-         setEmployees(prevEmployees => {
+    const addEmployee = employee => {
+
+        setEmployees(prevEmployees => {
             return [
                 ...prevEmployees
-                ,employee
+                , employee
             ]
         })
         storeEmployee(employee)
@@ -18,16 +18,17 @@ export const EmployeeContextProvider = props => {
 
     const storeEmployee = employee => {
         const employeesStored = localStorage.getItem('employees') !== null
-                                ? JSON.parse(localStorage.getItem('employees'))
-                                : []
+            ? JSON.parse(localStorage.getItem('employees'))
+            : []
         const updatedEmployees = [...employeesStored, employee]
         localStorage.setItem('employees', JSON.stringify(updatedEmployees))
     }
 
     const getStoredEmployees = () => {
-        if(localStorage.getItem('employees') !== null){
+        if (localStorage.getItem('employees') !== null) {
             const storedEmployees = JSON.parse(localStorage.getItem('employees'))
-            setEmployees( () => {
+
+            setEmployees(() => {
                 return [
                     ...storedEmployees
                 ]
@@ -35,13 +36,13 @@ export const EmployeeContextProvider = props => {
         }
     }
 
-   
+
     return <EmployeeContext.Provider value={{
         employees,
         addEmployee,
         getStoredEmployees
 
-        
+
     }}>
         {props.children}
     </EmployeeContext.Provider>

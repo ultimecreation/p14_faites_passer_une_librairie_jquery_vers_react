@@ -122,11 +122,11 @@ const CreateEmployee = () => {
 
                 </form>
             </div>
-            <Modal 
-                isOpen={modalIsOpen} 
-                setIsOpen={setModalIsOpen} 
-                modalContent={modalContent} 
-                myModalStyle={myModalStyle} 
+            <Modal
+                isOpen={modalIsOpen}
+                setIsOpen={setModalIsOpen}
+                modalContent={modalContent}
+                myModalStyle={myModalStyle}
                 myModalButtonStyle={myModalButtonStyle}
             />
         </div>
