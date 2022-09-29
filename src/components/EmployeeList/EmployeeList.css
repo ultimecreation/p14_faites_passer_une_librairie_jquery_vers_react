@@ -1,0 +1,17 @@
+.filters{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width:1016px;
+    margin-bottom: 1rem;
+}
+
+.filters .search__form{
+    display: flex;
+    align-items: baseline;
+}
+
+.filters .search__form input{
+   height: 1.1rem;
+   margin-left: 0.5rem;
+}

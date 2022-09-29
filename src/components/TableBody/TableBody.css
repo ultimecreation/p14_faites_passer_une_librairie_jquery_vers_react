@@ -16,3 +16,7 @@ tbody tr td {
 tbody tr:nth-of-type(odd) td:nth-of-type(1) {
     background: #f1f1f1;
 }
+ .dataTables_empty {
+    background: white!important;
+    text-align: center;
+}

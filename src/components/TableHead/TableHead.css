@@ -2,10 +2,13 @@ thead tr th {
     border-bottom: 1px solid #333;
     text-align: center;
     font-weight: bold;
-    padding: 0.25rem 1rem;
+    padding: 0.75rem 1rem;
 }
 thead tr th div{
     display: flex;
     justify-content: space-around;
     align-items: center;
+}
+thead{
+    
 }
