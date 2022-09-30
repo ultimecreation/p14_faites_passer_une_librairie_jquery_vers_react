@@ -1,0 +1,17 @@
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-calendar-picker-indicator {
+ /* visibility: hidden; */
+
+ position:relative;
+ left: -16px;
+width:200px; 
+}
+
+input[type="date"] {
+    background: transparent;
+  
+    border: 1px solid grey;
+   
+    color: white;
+    width: 149px;
+  }

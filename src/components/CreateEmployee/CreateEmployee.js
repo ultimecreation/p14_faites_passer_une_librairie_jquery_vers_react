@@ -3,8 +3,10 @@ import { Link } from 'react-router-dom';
 import "./CreateEmployee.css";
 import { Modal } from "ultime-modal";
 import { states } from "../../data/states";
+import { departments } from "../../data/departments";
 import { EmployeeContext } from '../../context/EmployeeContext';
 import DateInput from '../DateInput/DateInput';
+import SelectInput from '../SelectInput/SelectInput';
 const CreateEmployee = () => {
     const initialState = {
         firstname: '',
@@ -93,7 +95,7 @@ const CreateEmployee = () => {
                         value={employee.dateOfBirth}
                     />
 
-                    <DateInput 
+                    <DateInput
                         htmlFor="startDate"
                         labelText="startDate"
                         type="date"
@@ -111,28 +113,31 @@ const CreateEmployee = () => {
                         <label htmlFor="city">City</label>
                         <input id="city" type="text" name="city" onChange={handleChange} value={employee.city} />
 
-                        <label htmlFor="state">State</label>
-                        <select name="state" id="state" onChange={handleChange} value={employee.state} >
-                            {states.map((state, index) => {
-                                return <option key={index} value={state.abbreviation}>{state.name}</option>
-                            })}
-                        </select>
-
+                        <SelectInput 
+                            htmlFor="state"
+                            labelText="State"
+                            id="state"
+                            name="state"
+                            optionValues={states}
+                            onChange={handleChange}
+                            value={employee.startDate}
+                        
+                        />
                         <label htmlFor="zipCode">Zip Code</label>
                         <input id="zipCode" type="number" name="zipCode" onChange={handleChange} value={employee.zipCode} />
                     </fieldset>
 
-                    <label htmlFor="department">Department</label>
-                    <select name="department" id="department" onChange={handleChange} value={employee.department}>
-                        <option value="" >Select a department</option>
-                        <option value="Sales" >Sales</option>
-                        <option value="Marketing">Marketing</option>
-                        <option value="Engineering">Engineering</option>
-                        <option value="Human Resources">Human Resources</option>
-                        <option value="Legal">Legal</option>
-                    </select>
-
-                    <button >Save</button>
+                    <SelectInput 
+                            htmlFor="department"
+                            labelText="Department"
+                            id="department"
+                            name="department"
+                            optionValues={departments}
+                            onChange={handleChange}
+                            value={employee.department}
+                        
+                        />
+                    <button className='submit' >Save</button>
 
                 </form>
             </div>

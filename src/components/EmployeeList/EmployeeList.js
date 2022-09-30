@@ -21,11 +21,13 @@ const EmployeeList = () => {
         setPerPage(() => { return parseInt(e.target.value) })
         setCurrentPage(1)
     }
-    useEffect(() => {
-        setFilteredEmployees(employees)
-    }, [])
 
     useEffect(() => {
+        setFilteredEmployees(employees)
+    }, [employees])
+
+    useEffect(() => {
+
         setTotalPageCount(() => { return Math.ceil(filteredEmployees.length / perPage) })
         setStartIndex(() => { return (currentPage - 1) * perPage })
         setEndIndex(() => { return (currentPage - 1) * perPage + perPage })
@@ -38,14 +40,14 @@ const EmployeeList = () => {
         e.preventDefault()
         setCurrentPage(1)
         const filteredPeople = employees.filter(employee => {
-            
+
             let isValid = false
-            for(let property in employee){
-                if(employee[property].toLowerCase().indexOf(e.target.value.toLowerCase()) !== -1) {
+            for (let property in employee) {
+                if (employee[property].toLowerCase().indexOf(e.target.value.toLowerCase()) !== -1) {
                     isValid = true
-                }    
+                }
             }
-            if(isValid) return employee
+            if (isValid) return employee
         })
         setFilteredEmployees(() => [...filteredPeople])
     }

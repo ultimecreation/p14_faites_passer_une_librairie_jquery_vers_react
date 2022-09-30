@@ -1,0 +1,10 @@
+.select{
+    display: block;
+    height: 2rem;
+    text-align: left;
+    white-space: nowrap;
+    width: 14em;
+    border: 1px solid lightgray;
+    padding: 0 .5rem;
+    background: #f6f6f6;
+}
