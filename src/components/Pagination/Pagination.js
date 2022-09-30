@@ -30,12 +30,12 @@ const Pagination = (props) => {
   return ( 
     <div className='pagination'>
       <div className="count">
-        Showing {props.startIndex+1} to {parseInt(props.endIndex) } of {props.total} entries {props.totalPages} pages
+        Showing {props.startIndex+1} to {parseInt(props.endIndex) } of {props.total} entries
       </div>
       <div className="pagination__links">
-        <button onClick={handlePrevPageClick} disabled={prevLinkDisabled}>Previous</button>
-        <button>{props.currentPage}</button>
-        <button onClick={handleNextPageClick}  disabled={nextLinkDisabled} >Next</button>
+        <button onClick={handlePrevPageClick} disabled={prevLinkDisabled} className="prev">Previous</button>
+        <button className="current">{props.currentPage}</button>
+        <button onClick={handleNextPageClick}  disabled={nextLinkDisabled} className="next">Next</button>
       </div>
     </div>
   )

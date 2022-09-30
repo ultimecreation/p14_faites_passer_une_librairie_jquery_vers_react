@@ -5,3 +5,11 @@
     max-width:1016px;
     margin-top: 1rem;
 }
+
+.prev,.next{
+    border: none;
+    background:transparent;
+}
+.current{
+    padding: 0.75rem;
+}

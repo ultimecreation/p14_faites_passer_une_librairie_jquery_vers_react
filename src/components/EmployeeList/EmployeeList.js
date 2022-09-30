@@ -39,7 +39,7 @@ const EmployeeList = () => {
         e.preventDefault()
         setCurrentPage(1)
         const filteredPeople = employees.filter(employee => {
-            console.log(employee)
+            
             let isValid = false
             for(let property in employee){
                 if(employee[property].toLowerCase().indexOf(e.target.value.toLowerCase()) !== -1) {
@@ -47,7 +47,6 @@ const EmployeeList = () => {
                 }    
             }
             if(isValid) return employee
-            // return employee.firstname.toLowerCase().indexOf(e.target.value.toLowerCase()) !== -1
         })
         setFilteredEmployees(() => [...filteredPeople])
     }
