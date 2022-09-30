@@ -9,7 +9,6 @@ const EmployeeList = () => {
     const employeeContext = useContext(EmployeeContext)
     const employees = employeeContext.employees
     const [filteredEmployees, setFilteredEmployees] = useState([])
-    // const [filteredPeople, setFilteredPeople] = useState([])
     const [perPage, setPerPage] = useState(10)
     const [totalPageCount, setTotalPageCount] = useState(0)
     const [currentPage, setCurrentPage] = useState(1)
@@ -58,11 +57,11 @@ const EmployeeList = () => {
                 <form>
                     <label htmlFor="entriesLength">
                         Show {' '}
-                        <select name="entriesLength" id="entriesLength" onChange={handlePerPageChange}>
+                        <select name="entriesLength" id="entriesLength" onChange={handlePerPageChange} defaultValue={'10'}>
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="5">5</option>
-                            <option value="10" selected>10</option>
+                            <option value="10" >10</option>
                         </select>
                         {' '} entries
                     </label>
