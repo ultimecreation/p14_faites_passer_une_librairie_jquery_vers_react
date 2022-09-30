@@ -11,14 +11,19 @@ const Pagination = (props) => {
     setNextLinkDisabled(false)
  },[props.totalPages])
   const handlePrevPageClick = ()=>{
-    setPrevLinkDisabled(()=>props.currentPage <= 1 ? true: false)
-    setNextLinkDisabled(()=>props.currentPage <  props.totalPages? false: true)
-    if(props.currentPage > 1) props.setCurrentPage(props.currentPage - 1)
+    
+    if(props.currentPage > 1){
+      props.setCurrentPage(props.currentPage - 1)
+      setPrevLinkDisabled(()=>props.currentPage - 1 === 1 ? true: false)
+      setNextLinkDisabled(()=>props.currentPage <=  props.totalPages? false: true)
+    } 
   }
   const handleNextPageClick = ()=>{
-    setPrevLinkDisabled(()=> props.currentPage <=  1 ? true: false)
-    setNextLinkDisabled(()=> props.currentPage <  props.totalPages? false: true)
-    if(props.currentPage < props.totalPages ) props.setCurrentPage(props.currentPage + 1)
+    setPrevLinkDisabled(()=>props.currentPage + 1 === 1 ? true: false)
+    setNextLinkDisabled(()=> props.currentPage + 1 <  props.totalPages? false: true)
+    if(props.currentPage < props.totalPages ){
+      props.setCurrentPage(props.currentPage + 1)
+    } 
     
   }
 
