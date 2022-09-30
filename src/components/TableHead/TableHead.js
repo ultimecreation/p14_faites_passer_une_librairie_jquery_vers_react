@@ -6,7 +6,7 @@ const TableHead = ({ columns, handleSorting }) => {
     const [order, setOrder] = useState("asc");
 
     const handleSort = accessor => {
-        // console.log(accessor)
+        
         const sortOrder = accessor === sortField && order === "asc" ? "desc" : "asc";
         setSortField(accessor);
         setOrder(sortOrder);

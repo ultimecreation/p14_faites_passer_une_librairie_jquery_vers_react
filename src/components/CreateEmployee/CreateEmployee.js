@@ -4,6 +4,7 @@ import "./CreateEmployee.css";
 import { Modal } from "ultime-modal";
 import { states } from "../../data/states";
 import { EmployeeContext } from '../../context/EmployeeContext';
+import DateInput from '../DateInput/DateInput';
 const CreateEmployee = () => {
     const initialState = {
         firstname: '',
@@ -82,12 +83,25 @@ const CreateEmployee = () => {
                     <label htmlFor="lastname">Last Name</label>
                     <input type="text" id="lastname" name="lastname" onChange={handleChange} value={employee.lastname} />
 
-                    <label htmlFor="dateOfBirth">Date of Birth</label>
-                    <input id="dateOfBirth" type="date" name="dateOfBirth" onChange={handleChange} value={employee.dateOfBirth} />
+                    <DateInput 
+                        htmlFor="dateOfBirth" 
+                        labelText="dateOfBirth"
+                        type="date"
+                        id="dateOfBirth"
+                        name="dateOfBirth"
+                        onChange={handleChange}
+                        value={employee.dateOfBirth}
+                    />
 
-                    <label htmlFor="startDate">Start Date</label>
-                    <input id="startDate" type="date" name="startDate" onChange={handleChange} value={employee.startDate} />
-
+                    <DateInput 
+                        htmlFor="startDate"
+                        labelText="startDate"
+                        type="date"
+                        id="startDate"
+                        name="startDate"
+                        onChange={handleChange}
+                        value={employee.startDate}
+                    />
                     <fieldset className="address">
                         <legend>Address</legend>
 

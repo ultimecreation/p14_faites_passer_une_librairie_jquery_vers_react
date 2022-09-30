@@ -18,7 +18,7 @@ const TableBody = ({ employees, columns }) => {
                         </tr>
                     )
                 })
-                :<tr ><td valign="top" colspan="9" class="dataTables_empty">No data available in table</td></tr>
+                :<tr ><td valign="top" colSpan="9" className="dataTables_empty">No data available in table</td></tr>
             }
         </tbody>
     )
