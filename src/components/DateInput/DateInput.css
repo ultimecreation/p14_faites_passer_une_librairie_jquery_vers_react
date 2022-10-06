@@ -1,17 +1,24 @@
-input[type="date"]::-webkit-inner-spin-button,
+/* input[type="date"]::-webkit-inner-spin-button,
 input[type="date"]::-webkit-calendar-picker-indicator {
- /* visibility: hidden; */
+
 
  position:relative;
- left: -16px;
-width:200px; 
+ right: 20px;
+width:250px; 
 }
 
-input[type="date"] {
-    background: transparent;
+input[type="date"][placeholder]{
+    
   
     border: 1px solid grey;
    
-    color: white;
+    color: transparent;
     width: 149px;
   }
+
+  input[type="date"][value] {
+  
+    border: 1px solid grey;
+   
+    width: 149px;
+  } */
